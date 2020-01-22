@@ -1,0 +1,52 @@
+
+@import "~vue-material/dist/theme/engine"; // Import the theme engine
+
+@include md-register-theme("default", (
+  primary: md-get-palette-color(teal, 900), // The primary color of your application
+  accent: md-get-palette-color(yellow, 500) // The accent or secondary color
+));
+
+@import "~vue-material/dist/theme/all"; // Apply the theme
+@import "./variables";
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.stretchy {
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+
+.stiff {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.v-center {
+  align-items: center;
+}
+
+.h-center {
+  text-align: center;
+}
+
+.strat-fg {
+  color: $strat-yellow;
+}
+
+.strat-bg {
+  background-color: $strat-yellow;
+}
+
+@import 'font/style';

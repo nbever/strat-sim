@@ -1,0 +1,219 @@
+@font-face {
+  font-family: 'strat';
+  src:  url('font/fonts/strat.eot?621p7l');
+  src:  url('font/fonts/strat.eot?621p7l#iefix') format('embedded-opentype'),
+    url('font/fonts/strat.ttf?621p7l') format('truetype'),
+    url('font/fonts/strat.woff?621p7l') format('woff'),
+    url('font/fonts/strat.svg?621p7l#strat') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'strat' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-error:before {
+  content: "\e900";
+}
+.icon-warningreport_problem:before {
+  content: "\e901";
+}
+.icon-equalizer:before {
+  content: "\e902";
+}
+.icon-fast_forward:before {
+  content: "\e903";
+}
+.icon-fast_rewind:before {
+  content: "\e904";
+}
+.icon-loopsync:before {
+  content: "\e905";
+}
+.icon-library_books:before {
+  content: "\e906";
+}
+.icon-new_releases:before {
+  content: "\e907";
+}
+.icon-pause:before {
+  content: "\e908";
+}
+.icon-pause_circle_filled:before {
+  content: "\e909";
+}
+.icon-pause_circle_outline:before {
+  content: "\e90a";
+}
+.icon-play_arrow:before {
+  content: "\e90b";
+}
+.icon-play_circle_filled:before {
+  content: "\e90c";
+}
+.icon-play_circle_outline:before {
+  content: "\e90d";
+}
+.icon-recent_actors:before {
+  content: "\e90e";
+}
+.icon-shuffle:before {
+  content: "\e90f";
+}
+.icon-contacts:before {
+  content: "\e910";
+}
+.icon-list_alt:before {
+  content: "\e911";
+}
+.icon-add_circle:before {
+  content: "\e912";
+}
+.icon-add_circle_outlinecontrol_point:before {
+  content: "\e913";
+}
+.icon-backspace:before {
+  content: "\e914";
+}
+.icon-clearclose:before {
+  content: "\e915";
+}
+.icon-createmode_editedit:before {
+  content: "\e916";
+}
+.icon-forward:before {
+  content: "\e917";
+}
+.icon-redo:before {
+  content: "\e918";
+}
+.icon-remove_circledo_not_disturb_on:before {
+  content: "\e919";
+}
+.icon-remove_circle_outline:before {
+  content: "\e91a";
+}
+.icon-reply_all:before {
+  content: "\e91b";
+}
+.icon-save:before {
+  content: "\e91c";
+}
+.icon-outlined_flag:before {
+  content: "\e91d";
+}
+.icon-how_to_reg:before {
+  content: "\e91e";
+}
+.icon-insert_invitationevent:before {
+  content: "\e91f";
+}
+.icon-monetization_on:before {
+  content: "\e920";
+}
+.icon-local_hospital:before {
+  content: "\e921";
+}
+.icon-menu:before {
+  content: "\e93f";
+}
+.icon-arrow_forward_ios:before {
+  content: "\e922";
+}
+.icon-pie_chart:before {
+  content: "\e923";
+}
+.icon-pie_chart_outlined:before {
+  content: "\e924";
+}
+.icon-show_chart:before {
+  content: "\e925";
+}
+.icon-people_outline:before {
+  content: "\e926";
+}
+.icon-person:before {
+  content: "\e927";
+}
+.icon-person_add:before {
+  content: "\e928";
+}
+.icon-person_outlineperm_identity:before {
+  content: "\e929";
+}
+.icon-account_circle:before {
+  content: "\e92a";
+}
+.icon-assignment_ind:before {
+  content: "\e92b";
+}
+.icon-build:before {
+  content: "\e92c";
+}
+.icon-done:before {
+  content: "\e92d";
+}
+.icon-help:before {
+  content: "\e92e";
+}
+.icon-highlight_remove:before {
+  content: "\e92f";
+}
+.icon-historyrestore:before {
+  content: "\e930";
+}
+.icon-hourglass_full:before {
+  content: "\e931";
+}
+.icon-language:before {
+  content: "\e932";
+}
+.icon-search:before {
+  content: "\e933";
+}
+.icon-settings:before {
+  content: "\e934";
+}
+.icon-supervisor_account:before {
+  content: "\e935";
+}
+.icon-swap_horiz:before {
+  content: "\e936";
+}
+.icon-today:before {
+  content: "\e937";
+}
+.icon-swap_horizontal_circle:before {
+  content: "\e938";
+}
+.icon-switch_account:before {
+  content: "\e939";
+}
+.icon-storefront:before {
+  content: "\e93a";
+}
+.icon-dynamic_feed:before {
+  content: "\e93b";
+}
+.icon-emoji_events:before {
+  content: "\e93c";
+}
+.icon-sports_basketball:before {
+  content: "\e93d";
+}
+.icon-sports_handball:before {
+  content: "\e93e";
+}
