@@ -84,7 +84,7 @@ const deleteTeam = {
 const addPlayerToTeam = {
   type: TeamType,
   args: {
-    team: {type GraphQLNonNull(GraphQLID)},
+    team: {type: GraphQLNonNull(GraphQLID)},
     player: {type: PlayerInputType}
   },
   resolve: async (root, args) => {

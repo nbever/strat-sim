@@ -1,5 +1,7 @@
 <template>
   <div class="my-container">
+    <md-dialog-alert :md-active.sync="$root.showError" :md-content="$root.error">
+    </md-dialog-alert>
     <title-bar></title-bar>
     <div class="my-workpane">
       <router-view></router-view>
@@ -14,7 +16,7 @@ export default {
   name: 'App',
   data: () => {
     return {
-      message: 'Using Parcel In A Vue.js App',
+      message: 'Using Parcel In A Vue.js App'
     };
   },
   components: {

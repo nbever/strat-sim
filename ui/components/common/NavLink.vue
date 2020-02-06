@@ -13,8 +13,6 @@
     methods: {
       goto: async function() {
         this.$router.push(this.link);
-        const result = await this.speak('something');
-        console.log(`${result}`);
       }
     }
   };

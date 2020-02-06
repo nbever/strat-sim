@@ -54,9 +54,7 @@ const schema = new GraphQLSchema({
       deleteCardSet: deleteCardSet,
 
       saveTeam: saveTeam,
-      deleteTeam: deleteTeam,
-
-      savePlayer: savePlayer
+      deleteTeam: deleteTeam
     }
   })
 });

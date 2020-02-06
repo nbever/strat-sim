@@ -4,12 +4,14 @@
   "description": "",
   "author": "",
   "scripts": {
-    "dev": "parcel index.html",
+    "local-dev": "parcel index.html",
+    "dev": "node parcel-dev-server.js",
     "prod": "parcel build index.html"
   },
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.8.3",
+    "lodash": "^4.17.15",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4",
     "vue-material": "^1.0.0-beta-11",
@@ -23,6 +25,7 @@
     "babel-preset-env": "^1.7.0",
     "eslint-plugin-vue": "^5.2.3",
     "parcel-bundler": "^1.12.4",
+    "parcel-proxy-server": "^1.1.0",
     "sass": "^1.25.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.11"

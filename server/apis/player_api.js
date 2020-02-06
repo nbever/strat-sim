@@ -2,6 +2,7 @@ const {
   GraphQLID,
   GraphQLList,
   GraphQLNonNull,
+  GraphQLInputObjectType
 } = require('graphql');
 
 const {
@@ -25,8 +26,8 @@ const PlayerInputType = new GraphQLInputObjectType({
 
 const listPlayers =  {
   type: GraphQLList(PlayerType),
-  resolve: (root, args,context, info) => {
-    const players = PlayerModel.find().exec();
+  resolve: async (root, args,context, info) => {
+    const players = await PlayerModel.find().exec();
     return players;
   }
 };
@@ -38,7 +39,7 @@ const findPlayer =  {
       type: GraphQLNonNull(GraphQLID)
     }
   },
-  resolve: (root, args, context, info) => {
+  resolve: async (root, args, context, info) => {
     const player = await PlayerModel.findById(args.id).exec();
     return player;
   }
@@ -50,11 +51,11 @@ const savePlayer = {
     id: {type: GraphQLID},
     player: PlayerInputType
   },
-  resolve: (root, args) => {
+  resolve: async (root, args) => {
 
     const {_id, ...newPlayer} = args.player;
     await PlayerModel.findOneAndUpdate({_id: id}, newPlayer, {upsert: true});
-    const player = PlayerModel.findOne({_id: id});
+    const player = await PlayerModel.findOne({_id: id});
     return player;
   }
 };
@@ -62,7 +63,7 @@ const savePlayer = {
 module.exports = {
   listPlayers,
   findPlayer,
-  savePlayer
+  savePlayer,
 
   PlayerInputType
 };

@@ -37,5 +37,15 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   render: h => h(App),
-  router
+  router,
+  data: {
+    error: null,
+    showError: false
+  },
+  methods: {
+    setError: function(err) {
+      this.error = err;
+      this.showError = true;
+    }
+  }
 });
