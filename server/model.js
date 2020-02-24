@@ -133,7 +133,6 @@ const teamSchema = new Schema({
   name: String,
   city: String,
   logo: String,
-  year: Number,
   players: [playerSchema],
   salary: Number,
   card: teamCardSchema
@@ -143,7 +142,7 @@ const TeamModel = mongoose.model('team', teamSchema, 'teams');
 const cardSetSchema = new Schema({
   name: String,
   year: Number,
-  teams: [Schema.ObjectId]
+  teams: [teamSchema]
 });
 const CardSetModel = mongoose.model('cardSet', cardSetSchema, 'cardSets');
 

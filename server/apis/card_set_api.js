@@ -27,7 +27,7 @@ const findCardSet = {
     id: {type: GraphQLNonNull(GraphQLID)}
   },
   resolve: async (root, args) => {
-    const set = CardSetModel.findById(args.id);
+    const set = await CardSetModel.findById(args.id);
     return set;
   }
 };
@@ -80,10 +80,9 @@ const addTeamToSet = {
   resolve: async (root, args) => {
     const set = await CardSetModel.findById(args.cardSet);
     args.team.year = set.year;
-    const existingTeam = await TeamModel.findOne({
-      name: args.team.name,
-      city: args.team.city, 
-      year: args.team.year
+    const existingTeam = set.teams.find((t) => {
+      return t.name === team.name &&
+        t.city === team.city;
     });
 
     if (!isNil(existingTeam)) {
@@ -92,7 +91,7 @@ const addTeamToSet = {
     }
 
     const newTeam = await TeamModel.create(args.team);
-    set.teams.push(newTeam._id);
+    set.teams.push(newTeam);
 
     const newSet = await CardSetModel.updateOne({_id: args.cardSet}, set);
     return newSet;

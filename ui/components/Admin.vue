@@ -3,18 +3,18 @@
     <div class="nav">
       <nav-link
         title="Leagues"
-        link="leagues"
+        link="/admin/leagues"
         v-bind:is-selected="(route === 'leagues')"
       >
       </nav-link>
       <nav-link 
         title="Cardsets" 
-        link="cardsets" 
+        link="/admin/cardsets" 
         v-bind:is-selected="(route === 'cardsets')"
       >  
       </nav-link>
     </div>
-    <div>
+    <div class="nav-view">
       <router-view></router-view>
     </div>
   </div>
@@ -50,5 +50,12 @@
 
   .nav {
     background-color: $gray;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .nav-view {
+    flex-grow: 1;
+    flex-shrink: 1;
   }
 </style>

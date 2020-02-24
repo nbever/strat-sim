@@ -2,6 +2,12 @@
   <div class="my-container">
     <md-dialog-alert :md-active.sync="$root.showError" :md-content="$root.error">
     </md-dialog-alert>
+    <md-dialog :md-active.sync="$root.loading">
+      <div class="loading">
+        <div class="italic">Loading...</div>
+        <md-progress-bar md-mode="query"></md-progress-bar>
+      </div>
+    </md-dialog>
     <title-bar></title-bar>
     <div class="my-workpane">
       <router-view></router-view>
@@ -37,5 +43,9 @@ export default {
     flex-shrink: 1;
     flex-grow: 1;
     position: relative;
+  }
+
+  .loading {
+    padding: 24px;
   }
 </style>

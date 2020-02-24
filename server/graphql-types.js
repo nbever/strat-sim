@@ -215,7 +215,7 @@ const TeamType = new GraphQLObjectType({
     city: {type: GraphQLString},
     logo: {type: GraphQLString},
     year: {type: GraphQLInt},
-    players: {type: new GraphQLList(PlayerLiteType)},
+    players: {type: new GraphQLList(PlayerType)},
     card: {type: TeamCardType}
   }
 });
@@ -273,7 +273,7 @@ const CardSetType = new GraphQLObjectType({
     name: {type: GraphQLString},
     year: {type: GraphQLInt},
     leagueName: {type: GraphQLString},
-    teams: {type: new GraphQLList(GraphQLID)}
+    teams: {type: new GraphQLList(TeamType)}
   }
 });
 

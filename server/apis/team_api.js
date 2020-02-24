@@ -9,7 +9,7 @@ const {
 } = require('graphql');
 
 const {
-  TeamModel, PlayerModel
+  TeamModel, PlayerModel, CardSetModel
 } = require('../model');
 
 const {
@@ -19,6 +19,8 @@ const {
 const {
   PlayerInputType
 } = require('./player_api');
+
+const isNil = require('lodash/isNil');
 
 const TeamInputType = new GraphQLInputObjectType({
   name: 'TeamInputType',
@@ -33,8 +35,25 @@ const TeamInputType = new GraphQLInputObjectType({
 
 const listTeams = {
   type: GraphQLList(TeamType),
-  resolve: (root, args, context, info) => {
-    return TeamModel.find().exec();
+  args: {
+    teamList: {
+      type: new GraphQLInputObjectType({
+        name: 'TeamListI',
+        fields: () => ({
+          ids: {type: new GraphQLList(GraphQLID)}
+        })
+      })
+    }
+  },
+  resolve: async (root, args, context, info) => {
+
+    const searchFunc = isNil(args) || isNil(args.teamList) ?
+      TeamModel.find()
+      :
+      TeamModel.find().where('_id').in(args.teamList.ids);
+
+    const teams = await searchFunc.exec();
+    return teams;
   }
 };
 
@@ -71,12 +90,14 @@ const saveTeam = {
 const deleteTeam = {
   type: GraphQLBoolean,
   args: {
-    id: {
-      type: GraphQLNonNull(GraphQLID)
-    }
+    cardSetId: {type: GraphQLNonNull(GraphQLID)},
+    teamId: {type: GraphQLNonNull(GraphQLID)}
   },
   resolve: async (root, args) => {
-    await TeamModel.findByIdAndDelete(args.id);
+    const set = await CardSetModel.findById(args.cardSetId);
+
+    set.teams.id(args.teamId).remove();
+    set.save();
     return true;
   }
 }

@@ -8,7 +8,7 @@
 
         <md-menu-content>
           <md-menu-item to="/home">Home</md-menu-item>
-          <md-menu-item to="leagueAdmin">Admin</md-menu-item>
+          <md-menu-item to="/admin">Admin</md-menu-item>
         </md-menu-content>
       </md-menu>
 
