@@ -38,7 +38,29 @@ export default {
       {query: `mutation{deleteCardSet(id:"${id}")}`}, this, this.$root, 'Uknown');
   },
   addTeamToCardSet: async function(cardSetId, team) {
-    const teamString = toQL(team);
+
+    const {upload, ...partialTeam} = team;
+
+    //save the image if it's an upload
+    if (team.upload === true) {
+      const formData = new FormData();
+      formData.append('logoUpload', team.logo);
+
+      const response = await fetch(
+        '/api/logos', 
+        {
+          method: 'POST', 
+          body: formData
+        });
+
+
+      const result = await response.json();
+
+      partialTeam.logo = result.logo;
+    }
+
+    const teamString = toQL(partialTeam);
+
     const result = await sFetch('/graphql', 'POST',
       {query: `mutation{addTeamToCardSet(cardSet: "${cardSetId}", team:${teamString}){_id}}`},
       this, this.$root);

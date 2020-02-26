@@ -1,5 +1,7 @@
 const ParcelProxyServer = require('parcel-proxy-server');
  
+const target = 'http://localhost:3000';
+
 // configure the proxy server
 const server = new ParcelProxyServer({
   entryPoint: './index.html',
@@ -15,7 +17,10 @@ const server = new ParcelProxyServer({
   proxies: {
     // add proxies here
     '/graphql': {
-      target: 'http://localhost:3000/graphql'
+      target: `${target}/graphql`
+    },
+    '/api': {
+      target: `${target}`
     }
   }
 });
